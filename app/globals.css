@@ -1,9 +1,23 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "../app";
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme {
   --color-ink: #0A0A0A;
@@ -22,21 +36,23 @@
   --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; }
-html { scroll-behavior: smooth; }
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
 
-body {
-  font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--color-ink);
-  background: var(--color-paper);
-  -webkit-font-smoothing: antialiased;
+  body {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--color-ink);
+    background: var(--color-paper);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--color-paper-off); }
+  ::-webkit-scrollbar-thumb { background: var(--color-ink-faint); border-radius: 0px; }
 }
-
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-paper-off); }
-::-webkit-scrollbar-thumb { background: var(--color-ink-faint); border-radius: 0px; }
 
 @keyframes fadeUp {
   0% { transform: translateY(12px); opacity: 0; }
