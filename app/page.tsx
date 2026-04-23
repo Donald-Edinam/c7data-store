@@ -210,8 +210,13 @@ export default function HomePage() {
       <div className="min-h-screen flex flex-col bg-paper font-body text-ink selection:bg-ink selection:text-paper">
         <header className="h-[52px] sticky top-0 bg-paper/90 backdrop-blur z-40 border-b border-ink-faint">
           <div className="max-w-[720px] mx-auto px-6 h-full flex items-center justify-between">
-            <Link href="/" className="font-display font-[900] text-[18px] tracking-[-0.03em] text-ink">
-              C7 DATA
+            <Link
+              href="/"
+              className="font-display font-[900] text-[15px] leading-none"
+              style={{ letterSpacing: "0.06em" }}
+            >
+              <span style={{ color: "#8B5E3C" }}>C7</span>
+              <span style={{ color: "#0A0A0A" }}>DATA</span>
             </Link>
             <Link href="/orders" className="text-[12px] font-medium uppercase tracking-[1.5px] text-ink hover:text-ink-muted transition-colors">
               ORDERS
