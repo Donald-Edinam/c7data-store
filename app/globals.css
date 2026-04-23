@@ -1,0 +1,61 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --color-ink: #0A0A0A;
+  --color-ink-mid: #3D3D3D;
+  --color-ink-muted: #8A8A8A;
+  --color-ink-faint: #E8E8E8;
+  --color-paper: #FFFFFF;
+  --color-paper-off: #F7F7F5;
+  --color-accent: #8B5E3C;
+  --color-green: #1A7A4A;
+  --color-red: #C0392B;
+  --color-amber: #D97706;
+  --color-blue: #2563EB;
+
+  --font-display: 'Satoshi', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-ink);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-paper-off); }
+::-webkit-scrollbar-thumb { background: var(--color-ink-faint); border-radius: 0px; }
+
+@keyframes fadeUp {
+  0% { transform: translateY(12px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.4s ease forwards;
+  opacity: 0;
+}
+
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.10s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.20s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.30s; }
